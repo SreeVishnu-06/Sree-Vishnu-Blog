@@ -1,0 +1,13 @@
+title: Sree Vishnu
+description: A personal space for projects, ideas, and things learned along the way.
+url: "https://sreevishnu0506-cyber.github.io"
+baseurl: "/Sree-Vishnu-Blog"
+author: Sree Vishnu
+markdown: kramdown
+permalink: /blog/:title/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+exclude: [README.md, WRITING.md]
