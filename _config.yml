@@ -1,13 +1,16 @@
-title: Sree Vishnu
-description: A personal space for projects, ideas, and things learned along the way.
+﻿title: Sree Vishnu Raju Dommaraju
+description: Senior Generative AI Engineer — agentic AI, grounded retrieval, and cloud-native systems.
 url: "https://sreevishnu0506-cyber.github.io"
 baseurl: "/Sree-Vishnu-Blog"
-author: Sree Vishnu
-markdown: kramdown
-permalink: /blog/:title/
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-exclude: [README.md, WRITING.md]
+exclude:
+  [
+    README.md,
+    WRITING.md,
+    IMPLEMENTATION.md,
+    scripts,
+    tests,
+    package.json,
+    package-lock.json,
+    node_modules,
+    dist,
+  ]
