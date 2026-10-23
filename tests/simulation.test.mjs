@@ -73,24 +73,30 @@ test("generated assets and anchor destinations resolve", async () => {
   assert.doesNotMatch(html, /\{\{|\{%|github\.com|example\.com/);
 });
 
-test('clean builds cannot retain deleted assets', async () => {
-  const { writeFile } = await import('node:fs/promises');
-  const { execFileSync } = await import('node:child_process');
-  await writeFile('dist/stale-asset-check.txt', 'obsolete synthetic fixture');
-  execFileSync(process.execPath, ['scripts/build.mjs']);
-  await assert.rejects(readFile('dist/stale-asset-check.txt'), { code: 'ENOENT' });
+test("clean builds cannot retain deleted assets", async () => {
+  const { writeFile } = await import("node:fs/promises");
+  const { execFileSync } = await import("node:child_process");
+  await writeFile("dist/stale-asset-check.txt", "obsolete synthetic fixture");
+  execFileSync(process.execPath, ["scripts/build.mjs"]);
+  await assert.rejects(readFile("dist/stale-asset-check.txt"), {
+    code: "ENOENT",
+  });
 });
 
-test('public text is valid Unicode and sharing artwork has the declared size', async () => {
-  const { readdir } = await import('node:fs/promises');
-  for (const directory of ['assets', 'dist/assets']) {
+test("public text is valid Unicode and sharing artwork has the declared size", async () => {
+  const { readdir } = await import("node:fs/promises");
+  for (const directory of ["assets", "dist/assets"]) {
     for (const filename of await readdir(directory)) {
       if (!/\.(js|svg)$/.test(filename)) continue;
-      assert.doesNotMatch(await readFile(`${directory}/${filename}`, 'utf8'), /\uFFFD/, filename);
+      assert.doesNotMatch(
+        await readFile(`${directory}/${filename}`, "utf8"),
+        /\uFFFD/,
+        filename,
+      );
     }
   }
-  assert.doesNotMatch(await readFile('dist/index.html', 'utf8'), /\uFFFD/);
-  const image = await readFile('dist/assets/social.png');
+  assert.doesNotMatch(await readFile("dist/index.html", "utf8"), /\uFFFD/);
+  const image = await readFile("dist/assets/social.png");
   assert.equal(image.readUInt32BE(16), 1200);
   assert.equal(image.readUInt32BE(20), 630);
 });

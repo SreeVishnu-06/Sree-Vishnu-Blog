@@ -5,37 +5,37 @@
 };
 export const capabilities = [
   [
-    "Generative & Agentic AI",
+    "Agentic AI",
     "Reasoning with boundaries.",
     "Design stateful workflows with explicit tools, typed outputs, checkpoints, and human review.",
     "LLMs, Gemini, Llama, LangChain, LangGraph, tool calling, ReAct-style workflows, multi-agent systems, A2A concepts, MCP-style interfaces, structured outputs, guardrails, human-in-the-loop",
   ],
   [
-    "RAG & Knowledge Systems",
+    "LLM & Retrieval",
     "Knowledge with provenance.",
     "Connect retrieval, context selection, and citations so answers can be inspected.",
     "Embeddings, semantic/hybrid retrieval, FAISS, Pinecone, Vertex AI Vector Search, reranking, metadata filtering, chunking, contextual grounding, document intelligence",
   ],
   [
-    "ML & Evaluation",
+    "ML, NLP & Evaluation",
     "Evidence before intuition.",
     "Evaluate models and retrieval against defined tasks, failure modes, and representative datasets.",
     "Python, PyTorch, TensorFlow, scikit-learn, XGBoost, MLflow, RAGAS, TruLens, model evaluation, feature engineering, forecasting, classification",
   ],
   [
-    "Cloud, MLOps & Infrastructure",
+    "Cloud & MLOps",
     "Operations are architecture.",
     "Build repeatable delivery paths with observable services and deliberate infrastructure boundaries.",
     "GCP / Vertex AI, AWS, Azure, Docker, Kubernetes, Terraform, GitHub Actions, Jenkins, CI/CD, observability",
   ],
   [
-    "Backend & Data Platforms",
+    "Backend & Data",
     "Dependable foundations.",
     "Connect APIs, events, and distributed processing with explicit contracts and resilient execution.",
     "FastAPI, REST APIs, Python, Java/Spring Boot, PostgreSQL, MongoDB, Redis, Kafka, Spark, PySpark, distributed pipelines",
   ],
   [
-    "Interfaces & Product Integration",
+    "Product Integration",
     "Make intelligence usable.",
     "Expose system state, meaningful controls, and clear recovery paths in user-facing AI workflows.",
     "React, TypeScript, HTML/CSS, AI-integrated applications, user-facing agent workflows",
@@ -249,15 +249,31 @@ export const experience = [
 ];
 export const scenarios = {
   knowledge: {
-    name: "Knowledge Retrieval",
+    name: "Knowledge Orchestration",
     stages: [
-      ["Query", "Receive a fictional handbook question."],
-      ["Retrieve", "Select authorized synthetic handbook section 2."],
-      ["Rerank", "Prioritize the passage about document review."],
-      ["Ground", "Attach citation [Handbook §2] to the response."],
       [
-        "Evaluate",
-        "Check that the response is supported by the selected passage.",
+        "User Query",
+        "Receive a fictional question: how should a draft document be reviewed?",
+      ],
+      [
+        "Router Agent",
+        "Select a bounded retrieval workflow and the tools allowed for this request.",
+      ],
+      [
+        "Retrieval / Tools",
+        "Retrieve authorized synthetic handbook section 2: drafts require a reviewer.",
+      ],
+      [
+        "Reason / Validate",
+        "Check that the proposed answer is supported by the selected evidence.",
+      ],
+      [
+        "Guardrails",
+        "Validate access policy and response structure; retain only the required context.",
+      ],
+      [
+        "Response",
+        "Return the synthetic answer with citation [Handbook §2] and a review checkpoint.",
       ],
     ],
   },
