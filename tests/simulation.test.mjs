@@ -46,7 +46,9 @@ test("six complete concepts and exact connection destination", () => {
 });
 test("public page has no forbidden links and all sections exist", async () => {
   const html = await readFile("index.html", "utf8");
-  assert.doesNotMatch(html, /github\.com|example\.com|mailto:|tel:/i);
+  assert.doesNotMatch(html, /github\.com|example\.com/i);
+  assert.ok(html.includes(`href="mailto:${profile.email}"`));
+  assert.ok(html.includes(`href="tel:${profile.phone}"`));
   for (const id of [
     "about",
     "expertise",

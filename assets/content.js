@@ -1,4 +1,6 @@
 ﻿export const profile = {
+  email: "sreevishnu0506@gmail.com",
+  phone: "9717277745",
   name: "Sree Vishnu Raju Dommaraju",
   title: "Senior Generative AI Engineer",
   linkedin: "https://www.linkedin.com/in/sreevishnurajud/",
