@@ -5,8 +5,7 @@ baseurl: "/Sree-Vishnu-Blog"
 exclude:
   [
     README.md,
-    WRITING.md,
-    IMPLEMENTATION.md,
+    CODEX_PORTFOLIO_V2_INTERACTIVE_OVERHAUL.md,
     scripts,
     tests,
     package.json,

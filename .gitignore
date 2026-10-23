@@ -5,3 +5,6 @@ _site/
 playwright-report/
 tests/preview-*.png
 tests/lighthouse*.json
+
+# Local implementation brief; never publish or commit.
+CODEX_PORTFOLIO_V2_INTERACTIVE_OVERHAUL.md
