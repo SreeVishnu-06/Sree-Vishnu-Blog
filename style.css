@@ -2476,3 +2476,5 @@ body:not(.js) #scenario {
   pointer-events: none;
   contain: strict;
 }
+
+.contact-details{display:flex;flex-wrap:wrap;gap:20px 40px;margin-top:35px}.contact-details a{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:12px 0;border-bottom:1px solid var(--line);min-width:180px}.contact-details a>span:first-child{grid-column:1/-1;font:.6rem/1.8 var(--mono);text-transform:uppercase;letter-spacing:1px;color:var(--silver)}.contact-details strong{font-size:.88rem;font-weight:400;overflow-wrap:anywhere}.contact-details a>span:last-child{color:var(--ice)}@media(max-width:560px){.contact-details{flex-direction:column;gap:16px;margin-top:28px}.contact-details a{min-width:0;width:100%;max-width:340px}.contact-details strong{font-size:.82rem}}
